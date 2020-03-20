@@ -48,10 +48,12 @@ rule trimReadPair:
 		trimmedPaired1="data/trimmomatic/{sample}_R1_paired.fq.gz",
 		trimmedPaired2="data/trimmomatic/{sample}_R2_paired.fq.gz",
 		trimmedUnpaired="data/trimmomatic/{sample}_unpaired.fq.gz"
+	params:
+		headcrop=config["metagenomeHeadcrop"]
 	conda:
 		"envs/yaml/trimmomatic.yaml"
 	shell:
-		"bash {input.script} {input.raw}"
+		"bash {input.script} {input.raw} {params.headcrop}"
 
 
 # Creating indices for i) mouse, ii) human, and iii) mouse + human for screen and removing host contaminants.

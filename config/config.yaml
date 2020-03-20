@@ -16,6 +16,9 @@
 metagenomeControls:
   # - 140142
 
+# Number of bases to trim back from each read using Trimmomatic during quality control.
+metagenomeHeadcrop: 15
+
 # False-positive rate to use in VirFinder.
 metagenomeVirfinderFpr: 0.05
 

@@ -15,10 +15,10 @@
 # Variables defined by user
 FASTQ1=${1:?ERROR: Need to define FASTQ1.} # Forward read fastq
 FASTQ2=${2:?ERROR: Need to define FASTQ2.} # Reverse read fastq
-
-# Other variables
 HEADCROP=${3:-15} # Use 15 as default value based on recommendations for Swift Accel NGS 1S Plus kit (trims extra bases from adaptase step)
 ILLUMINACLIPADAPTERS=${4:-$(realpath $(which trimmomatic) | sed 's:trimmomatic$::')/adapters/TruSeq3-PE.fa} # Parses conda env PATH to use TruSeq3-PE adapters unless changed by the user
+
+# Other variables
 OUTDIR=data/trimmomatic/
 
 
