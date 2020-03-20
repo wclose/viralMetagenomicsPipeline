@@ -1,0 +1,6 @@
+name: catbat
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - cat=5.0.3

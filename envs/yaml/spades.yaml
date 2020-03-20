@@ -1,0 +1,6 @@
+name: spades
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - spades=3.11.1

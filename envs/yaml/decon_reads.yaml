@@ -1,0 +1,8 @@
+name: decon_reads
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - bowtie2=2.3.5
+  - samtools=1.9
+  - bedtools=2.29.1

@@ -1,0 +1,9 @@
+name: r
+channels:
+  - conda-forge
+  - r
+dependencies:
+  - r-tidyverse=1.2.1
+  - r-furrr=0.1.0
+  - r-vegan=2.5_6
+  - r-ecodist=2.0.1

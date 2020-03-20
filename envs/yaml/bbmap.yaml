@@ -1,0 +1,6 @@
+name: bbmap
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - bbmap=38.51
