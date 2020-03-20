@@ -18,6 +18,13 @@ rule all:
 		expand("data/shared/{group}.metagenome.norm.shared",
 			group = config["metagenomeGroups"]),
 		"data/catbat/metagenome.taxonomy.txt",
+		expand("data/shared/{group}.metagenome.subsample.norm.shared",
+			group = config["metagenomeGroups"]),
+		"data/diversity/sample.metagenome.alpha.tsv",
+		expand("data/diversity/sample.metagenome.beta.{beta}.pcoa.axes.tsv",
+			beta = config["metagenomeBeta"]),
+		expand("data/diversity/sample.metagenome.beta.{beta}.nmds.axes.tsv",
+			beta = config["metagenomeBeta"]),
 		expand("data/multiqc/{report}_multiqc_report.html",
 			report = config["metagenomeReports"])
 
