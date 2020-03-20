@@ -1,0 +1,113 @@
+__default__:
+  jobname: "{rule}.{wildcards}"
+  nodes: 1
+  ntaskspernode: 1
+  cpuspertask: 1
+  mempercpu: "4GB"
+  time: "30:00"
+  account: "ACCOUNT"
+  partition: "standard"
+  mailuser: "EMAIL"
+  mailtype: "END,FAIL"
+  output: "logs/slurm/%x-%j.out"
+
+
+
+
+
+# Part 1: Read Processing ---------------------------------
+
+trimReadPair:
+  cpuspertask: 2
+  time: "45:00"
+
+buildContaminantIndices:
+  cpuspertask: 12
+  time: "4:00:00"
+
+decontaminateTrimmedReads:
+  cpuspertask: 4
+  time: "5:00:00"
+
+# Part 2: Assembly ----------------------------------------
+
+assembleReads:
+  cpuspertask: 16
+  time: "8:00:00"
+
+dedupeContigs:
+  cpuspertask: 12
+
+# Part 3: Viral Contig Curation ---------------------------
+
+predictContigsVirsorter:
+  cpuspertask: 12
+  time: "36:00:00"
+
+predictContigsVirfinder:
+  cpuspertask: 12
+  time: "3:00:00"
+
+# Part 4: Binning -----------------------------------------
+
+indexContigs:
+  cpuspertask: 12
+
+mapContigs:
+  cpuspertask: 6
+  time: "2:00:00"
+
+binContigs:
+  cpuspertask: 16
+  time: "2:00:00"
+
+detectBinContamination:
+  cpuspertask: 12
+  time: "6:00:00"
+
+# Part 5: Generate Shared Bin File ------------------------
+
+indexBins:
+  cpuspertask: 12
+  time: "2:00:00"
+
+mapBins:
+  cpuspertask: 6
+  time: "2:00:00"
+
+# Part 6: Taxonomic Classification ------------------------
+
+getClassificationDatabases:
+  cpuspertask: 4
+  mempercpu: "45GB"
+  time: "1:30:00"
+
+classifyBins:
+  cpuspertask: 12
+  time: "1:30:00"
+
+# # Part 7: Diversity Metrics -------------------------------
+
+calcBinAlphaDiversity:
+  cpuspertask: 24
+  mempercpu: "2GB"
+  time: "12:00:00"
+
+calcBinBetaDiversity:
+  cpuspertask: 24
+  mempercpu: "2GB"
+  time: "12:00:00"
+
+# Part 8: Quality Control ---------------------------------
+
+combineRawReports:
+  cpuspertask: 12
+
+combineTrimmedReports:
+  cpuspertask: 12
+
+combineDeconReports:
+  cpuspertask: 12
+
+assemblyStats:
+  cpuspertask: 4
