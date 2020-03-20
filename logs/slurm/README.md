@@ -1,0 +1,1 @@
+Logs produced from jobs submitted to slurm will be placed here. This directory must exist prior to running code/slurm/snakemake.sh or the job submission will be cancelled by the system.
