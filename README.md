@@ -8,7 +8,7 @@ This workflow was designed to analyze viral community composition using DNA isol
 
 The steps below are meant to serve as a brief overview of the pipeline. For more information, please see the comments throughout the various scripts and the documentation for the tools used.
 
-**1. Read processing**
+**1. Read pre-processing**
 * **Purpose**: Remove low-quality sequences and any potential host contaminants (mouse and human in this case).
 * Trim read pairs and remove low-quality regions ([Trimmomatic](http://www.usadellab.org/cms/?page=trimmomatic)).
 * Remove potential contaminant sequences ([Bowtie2](http://bowtie-bio.sourceforge.net/bowtie2/index.shtml)).
