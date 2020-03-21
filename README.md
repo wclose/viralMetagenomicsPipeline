@@ -10,8 +10,8 @@ The steps below are meant to serve as a brief overview of the pipeline. For more
 
 **1. Read processing**
 * **Purpose**: Remove low-quality sequences and any potential host contaminants (mouse and human in this case).
-* Trim read pairs and remove low-quality regions ([Trimmomatic](http://www.usadellab.org/cms/?page=trimmomatic))
-* Remove potential contaminant sequences ([Bowtie2](http://bowtie-bio.sourceforge.net/bowtie2/index.shtml))
+* Trim read pairs and remove low-quality regions ([Trimmomatic](http://www.usadellab.org/cms/?page=trimmomatic)).
+* Remove potential contaminant sequences ([Bowtie2](http://bowtie-bio.sourceforge.net/bowtie2/index.shtml)).
 
 <br />
 
@@ -50,7 +50,7 @@ The steps below are meant to serve as a brief overview of the pipeline. For more
 
 <br />
 
-**6. Taxonomic lassification**
+**6. Taxonomic classification**
 * **Purpose**: Provide basic taxonomic information for each of the viral OTUs (bins).
 * Classify metagenome assembled bins (MAGs; [CAT/BAT](https://github.com/dutilh/CAT)).
 
